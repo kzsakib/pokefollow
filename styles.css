@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap');
+
+body {
+    margin: 0;
+    overflow: hidden;
+    height: 100vh;
+    background-color: #2b2a2a;
+}
+
+#score {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    color: white;
+    font-size: 24px;
+    font-family: 'Pixelify Sans'; /* Apply the imported font */
+    z-index: 10;
+    padding: 10px 15px; /* Add some padding */
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Shadow effect */
+    border: 2px solid #2167ff; /* Border color */
+    transition: transform 0.2s; /* Smooth transition for hover effect */
+}
+
+#score:hover {
+    transform: scale(1.1); /* Scale up slightly on hover */
+}
+
+#sprite {
+    width: 32px; 
+    height: 32px; 
+    background-image: url('Walk-Animalt.png'); 
+    background-repeat: no-repeat;
+    position: absolute;
+    pointer-events: none; 
+    transform: scale(1.5); 
+    transform-origin: center; 
+    opacity: 1; 
+    transition: opacity 1s ease; 
+}
+
+#candy {
+    width: 50px;  
+    height: 50px; 
+    background-image: url('candy.png'); 
+    background-repeat: no-repeat;
+    background-size: contain; 
+    position: absolute;
+    transform: scale(0.7); 
+    z-index: 10; 
+}
+
+@keyframes glow {
+    0% {
+        filter: brightness(1) drop-shadow(0 0 5px white);
+    }
+    50% {
+        filter: brightness(2) drop-shadow(0 0 10px rgb(255, 255, 255));
+    }
+    100% {
+        filter: brightness(1) drop-shadow(0 0 5px white);
+    }
+}
+
+.blink {
+    animation: glow 0.8s infinite; 
+}
+    
+.button-container {
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    height: 100vh;
+}
+
+.center-button {
+    padding: 15px 30px;
+    font-size: 24px;
+    font-family: 'Pixelify Sans'; 
+    background-color: #4859f0; 
+    color: white; 
+    border: none; 
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.center-button:hover {
+    background-color: #374c92;
+    transition: 0.2s ease-in-out; 
+}
